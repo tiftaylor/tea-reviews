@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>The Taste of Tea</title>
+
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<!-- Pick a Google Font ref -->
+
+</head>
+
+
+
+<body>
+
+<!-- Section1: Top of page shows full window onload -->
+<div id="topTitleImg">
+	<img src="">
+</div>
+
+<div id="topTitle">
+	<h1>The Taste of <em>Camellia Senensis</em></h1>
+	<p>Feminism pickles my cats Netflix. Happy hour Vampire Weekend self-deprecating humor extrovert fixing up my house, I'm really good at I have a crush on grab coffee or a drink seeing as many countries as possible the simple things in life.</p>
+</div>
+
+
+<!-- section2: Click Type Div Section -->
+<div class="section-title">
+	<h2>Select Tea Type</h2>
+</div>
+
+<div id="typGrid">
+	<div id="white">
+		<span>White</span>
+	</div>
+	<div id="green">
+		<span>Green</span>
+	</div>
+	<div id="oolong">
+		<span>Oolong</span>
+	</div>
+	<div id="black">
+		<span>Black</span>
+	</div>
+	<div id="raw">
+		<span>Raw Pu-erh</span>
+	</div>
+	<div id="ripe">
+		<span>Ripe Pu-erh</span>
+	</div>
+</div>
+
+
+<!-- Section3: Handlebars Script / Review Cards -->
+<div id="populateReviews">
+	<script id="handlebarReview" type="text/x-handlebars-template">
+		<div class="sectionTitle">
+			<h2>{{type}} Tea</h2>
+		</div>
+		<div id="reviewCard">
+			<p>Type: {{type}}</p>
+			<p>Name: {{nameOfTea}}</p>
+			<p>Flavor Review: {{reviewText}}</p>
+			<a href="???" value="Purchased from + {{shop}}"
+		</div>
+	</script>
+</div>
+
+
+<!-- Section4: Submit a tea review -->
+<div class="section-title">
+	<h2>Add Your Tasting Notes to the Page!</h2>
+</div>
+
+<div id="reviewMain">
+	<div id="reviewImg">
+		<label for="imgUpload">Do you have an image of this tea?</label>
+		<input type="button" id="imgUpload" name="imgUpload" value="Add my tea image!">
+	</div>
+
+	<div id="reviewForm">
+		<form id="review">
+			<label for="userName">Your Name:</label>
+			<input type="text" id="userName" name="userName">
+			<label for="type">Type:</label>
+			<select id="typeOfTea" name="typeOfTea">
+				<option value="white">White</option>
+				<option value="green">Green</option>
+				<option value="oolong">Oolong</option>
+				<option value="black">Black</option>
+				<option value="rawpuerh">Raw Pu-erh</option>
+				<option value="ripepuerh">Ripe Pu-erh</option>
+			</select>
+			<label for="nameOfTea">Name of Tea:</label>
+			<input type="text" id="nameOfTea" name="nameOfTea">
+			<label for="reviewText">Your tasting notes of this tea:</label>
+			<textarea name="reviewText" id="reviewText" rows="15" cols="50"></textarea>
+		</form>
+	</div>
+</div>
+
+
+<!-- Script Tags: Handlebars, jQuery, JS, FB/Instagram -->
+<!-- <script src="INSERT FBINSTA API"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="main.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha256-usTqAE1ywvdMtksWzdeWzD75MsfJN0h0U7y2NtZL3N0=" crossorigin="anonymous"></script>
+
+</body>
+</html>
