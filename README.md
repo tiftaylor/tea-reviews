@@ -1,2 +1,2 @@
 # tea-reviews
-Portfolio Project
+Personal Portfolio Project
