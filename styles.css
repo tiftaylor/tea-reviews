@@ -1,0 +1,89 @@
+
+
+#topImg {
+    background-image: url("website_images/greentea.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+#words {
+    padding-top: 120px;
+    padding-left: 100px;
+}
+
+#words p {
+    width: 40%;
+    margin-left: 16px;
+}
+
+section {
+    margin: 45px;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.tea-button {
+    color: white;
+    font-size: 2.3rem;
+}
+
+.tea-button:hover {
+    opacity: 0.4;
+}
+
+#white {
+    background: #f1d451;
+}
+
+#green {
+    background: #7ec251;
+}
+
+#oolong {
+    background: #cec254;
+}
+
+#black {
+    background: #aa4016;
+}
+
+#raw {
+    background: #d4e767;
+}
+
+#ripe {
+    background: #441c09;
+}
+
+#teaReviewSection {
+    margin: 0;
+}
+
+#slick {
+    margin: 45px;
+}
+
+.slick-prev, .slick-next {
+    filter: invert(1);
+    width: 35px;
+    height: 35px;
+}
+
+.slick-next {
+    right: -35px;
+}
+
+.slick-prev {
+    left: -35px;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 35px;
+}
+
+#reviewImg {
+    border: 2px dashed lightgray;
+}
