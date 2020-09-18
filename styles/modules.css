@@ -20,6 +20,8 @@
 .tea-button {
   color: white;
   font-size: 2.3rem;
+  margin: 1rem 0;
+  padding: 1.7rem 0;
 }
 
 .tea-button:hover {
@@ -50,6 +52,25 @@
   background: #441c09;
 }
 
+    @media only screen and (max-width: 992px) {
+      .tea-button {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .tea-button {
+        font-size: 1.5rem;
+        margin: .25rem;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .tea-button {
+        font-size: 1rem;
+        margin: 5px;
+      }
+    }
 
 
 /* Tea Review Section */
