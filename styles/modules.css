@@ -10,10 +10,17 @@
   padding-left: 100px;
 }
 
-#header-text p {
-  width: 40%;
-  margin-left: 16px;
+#header-text h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
 }
+
+    @media only screen and (min-width: 992px) {
+      #header-text h1 {
+        font-size: 4.5rem;
+      }
+    }
 
 
 /* Select Tea Type Section */
