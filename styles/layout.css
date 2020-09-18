@@ -1,0 +1,38 @@
+/* General Layout */
+
+section {
+  margin: 45px;
+}
+
+
+
+/* Overrides of Bootstrap Classes */
+.container-fluid {
+  padding: 0;
+}
+
+
+
+/* Header Section */
+
+#topImg {
+  height: 600px;
+}
+
+
+/* Select Tea Type Section */
+
+
+
+/* Tea Review Section */
+
+#teaReviewSection {
+  margin: 0;
+}
+
+
+/* Upload Review section */
+
+
+
+/* Footer Section */

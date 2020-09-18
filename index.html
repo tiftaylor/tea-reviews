@@ -5,16 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link rel="stylesheet" type="text/css" href="styles/reset.css">
-
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<!-- Slick CSS -->
 	<link rel="stylesheet" type="text/css" href="libraries/slick/slick.css"/>
 	<!-- Add the new slick-theme.css if you want the default styling -->
 	<link rel="stylesheet" type="text/css" href="libraries/slick/slick-theme.css"/>
 	<!-- Pick a Google Font ref -->
-	
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<!-- My CSS Files -->
+	<link rel="stylesheet" type="text/css" href="styles/base.css">
+	<link rel="stylesheet" type="text/css" href="styles/layout.css">
+	<link rel="stylesheet" type="text/css" href="styles/modules.css">
 	
 	<title>The Taste of Tea</title>
 </head>
@@ -23,17 +24,19 @@
 
 <body>
 
-<!-- Section1: Top of page shows full window onload -->
-<div id="topOfPage">
-	<div id="topImg">
-		<div id="words">
-			<h1 class="display-3">The Taste of <em>Camellia Senensis</em></h1>
-			<p>Feminism pickles my cats Netflix. Happy hour Vampire Weekend self-deprecating 
-				humor extrovert fixing up my house, I'm really good at I have a crush on grab 
-				coffee or a drink seeing as many countries as possible the simple things in life.</p>
-		</div>
-	</div>	
-</div>
+<header>
+	<!-- Section1: Top of page shows full window onload -->
+	<div id="topOfPage">
+		<div id="topImg">
+			<div id="header-text">
+				<h1 class="display-3">The Taste of <em>Camellia Senensis</em></h1>
+				<p>Feminism pickles my cats Netflix. Happy hour Vampire Weekend self-deprecating 
+					humor extrovert fixing up my house, I'm really good at I have a crush on grab 
+					coffee or a drink seeing as many countries as possible the simple things in life.</p>
+			</div>
+		</div>	
+	</div>
+</header>
 
 
 <main>
@@ -171,7 +174,7 @@
 		
 		<div id="reviewMain" class="container-fluid">
 			<div class="row mx-2">
-				<div id="reviewImg" class="col-5 p-3">
+				<div id="uploadImg" class="col-5 p-3">
 					<label for="imgUpload">Do you have an image of this tea?</label><br>
 					<input type="button" id="imgUpload" name="imgUpload" value="Add my tea image!">
 				</div>
