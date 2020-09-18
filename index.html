@@ -175,13 +175,17 @@
 		
 		<div id="reviewMain" class="container-fluid">
 			<div class="row mx-2">
-				<div id="uploadImg" class="col-5 p-3">
+				<div id="uploadImg" class="col-md-5 p-3">
 					<label for="imgUpload">Do you have an image of this tea?</label><br>
-					<input type="button" id="imgUpload" name="imgUpload" value="Add my tea image!">
+					<img id="img-preview" class="no-image" src="/images/mug-hot-solid.svg" alt="">
+					<label class="btn btn-secondary" for="img-input">Select Tea Image</label>
+					<input type="file" id="img-input" accept="image/png, image/jpeg">
 				</div>
-				<div class="col-1"></div>
-				<div class="col-6" id="reviewForm">
-					<form id="review">
+
+				<!-- <div class="col-md-1 my-3"></div> -->
+
+				<div class="col-md-6 my-3 mx-md-3" id="reviewForm">
+					<div id="review">
 						<div class="form-group row">
 							<label for="userName" class="col-sm-4 col-form-label">Your Name:</label>
 							<div class="col-sm-8">
@@ -211,7 +215,10 @@
 							<label for="reviewText">Your tasting notes of this tea:</label>
 							<textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
 						</div>
-					</form>
+						<div class="form-group">
+							<input class="btn btn-success" type="button" id="imgUpload" name="imgUpload" value="Submit Review">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
