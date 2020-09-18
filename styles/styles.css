@@ -1,7 +1,7 @@
 
 
 #topImg {
-    background-image: url("website_images/greentea.JPG");
+    background-image: url("/images/greentea.JPG");
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
