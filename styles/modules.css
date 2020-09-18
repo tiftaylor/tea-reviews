@@ -1,0 +1,87 @@
+/* Header section */
+#topImg {
+  background-image: url("/images/greentea.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#header-text {
+  padding-top: 120px;
+  padding-left: 100px;
+}
+
+#header-text p {
+  width: 40%;
+  margin-left: 16px;
+}
+
+
+/* Select Tea Type Section */
+.tea-button {
+  color: white;
+  font-size: 2.3rem;
+}
+
+.tea-button:hover {
+  opacity: 0.4;
+}
+
+#white {
+  background: #f1d451;
+}
+
+#green {
+  background: #7ec251;
+}
+
+#oolong {
+  background: #cec254;
+}
+
+#black {
+  background: #aa4016;
+}
+
+#raw {
+  background: #d4e767;
+}
+
+#ripe {
+  background: #441c09;
+}
+
+
+
+/* Tea Review Section */
+#slick {
+  margin: 45px;
+}
+
+.slick-prev, .slick-next {
+  filter: invert(1);
+  width: 35px;
+  height: 35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 35px;
+}
+
+
+
+/* Upload Review section */
+#uploadImg {
+  border: 2px dashed lightgray;
+}
+
+
+
+/* Footer Section */
