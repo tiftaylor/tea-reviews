@@ -10,16 +10,25 @@
   padding-left: 100px;
 }
 
-#header-text p {
-  width: 40%;
-  margin-left: 16px;
+#header-text h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
 }
+
+    @media only screen and (min-width: 992px) {
+      #header-text h1 {
+        font-size: 4.5rem;
+      }
+    }
 
 
 /* Select Tea Type Section */
 .tea-button {
   color: white;
   font-size: 2.3rem;
+  margin: 1rem 0;
+  padding: 1.7rem 0;
 }
 
 .tea-button:hover {
@@ -50,6 +59,25 @@
   background: #441c09;
 }
 
+    @media only screen and (max-width: 992px) {
+      .tea-button {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .tea-button {
+        font-size: 1.5rem;
+        margin: .25rem;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .tea-button {
+        font-size: 1rem;
+        margin: 5px;
+      }
+    }
 
 
 /* Tea Review Section */
