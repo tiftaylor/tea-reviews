@@ -1,6 +1,35 @@
 
 
+/* Text Transition */
+@keyframes transition-in {
+  from {
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    filter: 'alpha(opacity=0)  !important';
+    transform: translateY(70px) translateZ(0);
+  }
+  to {
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: 'alpha(opacity=1)  !important';
+    transform: translateY(0%) translateZ(0);
+  }
+}
 
+.text-fade {
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+
+.text-fade.activate {
+  -webkit-animation: transition-in 1000ms forwards;
+  -moz-animation: transition-in 1000ms forwards;
+  -o-animation: transition-in 1000ms forwards;
+  -ms-animation: transition-in 1000ms forwards;
+  animation: transition-in 1000ms forwards;
+}
 
 
 

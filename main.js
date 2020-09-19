@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+    // card slide deck
     $('#slick').slick({
         infinite: false,
         slidesToShow: 3,
@@ -6,6 +8,7 @@ $(document).ready(function(){
     });
 
 
+    // upload img for review
     $('#img-input').on('change', function() {
         const reader = new FileReader();
 
@@ -17,5 +20,7 @@ $(document).ready(function(){
 
         reader.readAsDataURL(this.files[0]);
     })
+
+
 });
 
