@@ -89,82 +89,34 @@
 	<!-- Section3: Handlebars Script / Review Cards -->
 	<div id="populateReviews">
 		<script id="handlebarReview" type="text/x-handlebars-template">
-			<div class="sectionTitle">
-				<h2>{{type}} Tea</h2>
-			</div>
-			<div id="reviewCard">
-				<p>Type: {{type}}</p>
-				<p>Name: {{nameOfTea}}</p>
-				<p>Flavor Review: {{reviewText}}</p>
-				<a href="???" value="Purchased from + {{shop}}"></a>
+			<div>
+				<div class="card mx-2 p-2">
+					<img src="images/sampleImg1.jpg" class="d-block w-100" alt="...">
+					<div class="sectionTitle">
+						<h2>{{nameOfTea}}</h2>
+					</div>
+					<div id="reviewCard">
+						<p>Type: {{type}}</p>
+						<p>Tasting Notes: {{The simple things in life trying different restaurants vinyl records Game of Thrones. There's no such thing as a typical Friday night grab coffee or a drink ask me anything Netflix but then it wouldn't be private, making people laugh the simple things in life fascinates me short-term dating easy-going.}}</p>
+						<p>Review By: {{nameOfPerson}}</p>
+						<a href="???">Purchased @ + {{shop}}</a>
+					</div>
+				</div>
 			</div>
 		</script>
 	</div>
 
 	<!-- Review Card Carousel -->
 	<section id="teaReviewSection" class="py-md-3">
+
 		<div class="section-title my-5">
 			<h2 class="display-4 text-center py-5 text-fade">{{type}} Tea Reviews</h2>
 		</div>
 
 		<div id="slick">
-			<div>
-				<div class="card mx-2 p-2">
-					<img src="images/sampleImg1.jpg" class="d-block w-100" alt="...">
-					<div class="sectionTitle">
-						<h2>1 Tea</h2>
-					</div>
-					<div id="reviewCard">
-						<p>Type: {{type}}</p>
-						<p>Name: {{nameOfTea}}</p>
-						<p>Flavor Review: {{reviewText}}</p>
-						<a href="???" value="Purchased from + {{shop}}"></a>
-					</div>
-				</div>
-			</div>
-			<div>
-				<div class="card mx-2 p-2">
-					<img src="images/sampleImg2.jpg" class="d-block w-100" alt="...">
-					<div class="sectionTitle">
-						<h2>2 Tea</h2>
-					</div>
-					<div id="reviewCard">
-						<p>Type: {{type}}</p>
-						<p>Name: {{nameOfTea}}</p>
-						<p>Flavor Review: {{reviewText}}</p>
-						<a href="???" value="Purchased from + {{shop}}"></a>
-					</div>
-				</div>
-			</div>
-			<div>
-				<div class="card mx-2 p-2">
-					<img src="images/sampleImg3.jpg" class="d-block w-100" alt="...">
-					<div class="sectionTitle">
-						<h2>3 Tea</h2>
-					</div>
-					<div id="reviewCard">
-						<p>Type: {{type}}</p>
-						<p>Name: {{nameOfTea}}</p>
-						<p>Flavor Review: {{reviewText}}</p>
-						<a href="???" value="Purchased from + {{shop}}"></a>
-					</div>
-				</div>
-			</div>
-			<div>
-				<div class="card mx-2 p-2">
-					<img src="images/sampleImg3.jpg" class="d-block w-100" alt="...">
-					<div class="sectionTitle">
-						<h2>5 Tea</h2>
-					</div>
-					<div id="reviewCard">
-						<p>Type: {{type}}</p>
-						<p>Name: {{nameOfTea}}</p>
-						<p>Flavor Review: {{reviewText}}</p>
-						<a href="???" value="Purchased from + {{shop}}"></a>
-					</div>
-				</div>
-			</div>
+
 		</div>
+
 	</section>
 
 	<!-- Section4: Submit a tea review -->
@@ -213,7 +165,7 @@
 						</div>
 						<div class="form-group">
 							<label for="reviewText">Your tasting notes of this tea:</label>
-							<textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
+							<textarea class="form-control" id="reviewText" name="reviewText" rows="3" maxlength="300"></textarea>
 						</div>
 						<div class="form-group">
 							<input class="btn btn-success" type="button" id="imgUpload" name="imgUpload" value="Submit Review">

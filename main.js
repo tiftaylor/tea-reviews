@@ -29,11 +29,26 @@ $(document).ready(function(){
     });
 
 
-    // card slide deck
+    // duplicate handlebar div
+    const template = $('#handlebarReview').html();
+    for(let i = 0; i < 5; i++){
+        $('#slick').append(template);
+    };
+
+
+    // card slide deck desktop view
     $('#slick').slick({
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
 
