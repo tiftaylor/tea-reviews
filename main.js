@@ -29,6 +29,13 @@ $(document).ready(function(){
     });
 
 
+    // duplicate handlebar div
+    const template = $('#handlebarReview').html();
+    for(let i = 0; i < 5; i++){
+        $('#slick').append(template);
+    };
+
+
     // card slide deck
     $('#slick').slick({
         infinite: false,
