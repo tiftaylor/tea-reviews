@@ -1,6 +1,6 @@
 /* Header section */
 #topImg {
-  background-image: url("/images/greentea.JPG");
+  background-image: url("../images/greentea.JPG");
   background-size: cover;
   background-repeat: no-repeat;
 }
