@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="libraries/slick/slick.css"/>
 	<!-- Add the new slick-theme.css if you want the default styling -->
 	<link rel="stylesheet" type="text/css" href="libraries/slick/slick-theme.css"/>
+	<!-- cropperjs CSS CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.css" integrity="sha512-949FvIQOibfhLTgmNws4F3DVlYz3FmCRRhJznR22hx76SKkcpZiVV5Kwo0iwK9L6BFuY+6mpdqB2+vDIGVuyHg==" crossorigin="anonymous" />
 	<!-- Pick a Google Font ref -->
 	<!-- My CSS Files -->
 	<link rel="stylesheet" type="text/css" href="styles/base.css">
@@ -127,6 +129,13 @@
 		
 		<div id="reviewMain" class="container-fluid">
 			<div class="row mx-2">
+
+
+				<div>
+					<img id="image" src="images/mug-hot-solid.svg">
+				</div>
+
+
 				<div id="uploadImg" class="col-md-5 p-3">
 					<label for="imgUpload">Do you have an image of this tea?</label><br>
 					<img id="img-preview" class="no-image" src="images/mug-hot-solid.svg" alt="">
@@ -210,6 +219,9 @@
 
 <!-- Script Tags: jQuery, FBInsta, Handlebars, Popper/Bootstrap, Main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- CDN for jquery-cropper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.min.js" integrity="sha512-9pGiHYK23sqK5Zm0oF45sNBAX/JqbZEP7bSDHyt+nT3GddF+VFIcYNqREt0GDpmFVZI3LZ17Zu9nMMc9iktkCw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cropper/1.0.1/jquery-cropper.min.js" integrity="sha512-V8cSoC5qfk40d43a+VhrTEPf8G9dfWlEJgvLSiq2T2BmgGRmZzB8dGe7XAABQrWj3sEfrR5xjYICTY4eJr76QQ==" crossorigin="anonymous"></script>
 <!-- <script src="INSERT FBINSTA API"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha256-usTqAE1ywvdMtksWzdeWzD75MsfJN0h0U7y2NtZL3N0=" crossorigin="anonymous"></script>
 <!-- Slick Script Tag -->

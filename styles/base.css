@@ -1,5 +1,4 @@
 
-
 /* Text Transition */
 @keyframes transition-in {
   from {
@@ -32,6 +31,9 @@
 }
 
 
+#image {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+}
 
 
 

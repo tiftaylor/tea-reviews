@@ -100,15 +100,37 @@ $(document).ready(function(){
         ]
     });
 
-
     // upload img for review
+ 
+    
+
+    
+
+
+
     $('#img-input').on('change', function() {
         const reader = new FileReader();
 
         reader.onload = (e) => {
-            $('#img-preview')
+            var $image = $('#img-preview');
+
+            $image
                 .attr('src', e.target.result)
                 .removeClass('no-image');
+
+            $image.cropper({
+                aspectRatio: 1 / 1,
+                viewMode: 2,
+                crop: function(event) {
+                    console.log(event.detail.x);
+                    console.log(event.detail.y);
+                    console.log(event.detail.width);
+                    console.log(event.detail.height);
+                    console.log(event.detail.rotate);
+                    console.log(event.detail.scaleX);
+                    console.log(event.detail.scaleY);
+                }
+            });
         }
 
         reader.readAsDataURL(this.files[0]);
