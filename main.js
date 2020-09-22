@@ -1,3 +1,47 @@
+
+// Firebase Configuration
+
+var firebaseConfig = {
+    apiKey: "AIzaSyD2gm78P-MUB-uQujTozkxNIhZAXFOaDtU",
+    authDomain: "tea-review-f07f3.firebaseapp.com",
+    databaseURL: "https://tea-review-f07f3.firebaseio.com",
+    projectId: "tea-review-f07f3",
+    storageBucket: "tea-review-f07f3.appspot.com",
+    messagingSenderId: "859918162530",
+    appId: "1:859918162530:web:4c8bf20e069f2969774f3b",
+    measurementId: "G-TMZTB5PDS6"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+let database = firebase.database();
+
+const dbRef = database.ref('reviews')
+
+dbRef.push({
+    nameOfTea: 'Yucky',
+    imgUpload: 'images/sampleImg1.JPG',
+    type: 'black',
+    tastingNotes: 'The simple things in life trying different restaurants vinyl records Game of Thrones. Theres no such thing as a typical Friday night grab coffee or a drink ask me anything Netflix but then it wouldnt be private, making people laugh the simple things in life fascinates me short-term dating easy-going.',
+    nameOfUser: 'tif',
+    shop: 'www.nepalieteatraders.com'
+})
+
+
+// render data to review cards
+dbRef.on('child_added', function(snapshot) {
+    const slickCarousel = $('#slick');
+    const review = snapshot.val();
+
+    const source = $("#handlebarReview").html();
+    const template = Handlebars.compile(source);
+    const renderedHTML = template(review);
+    slickCarousel.slick('slickAdd', renderedHTML);
+  });
+
+
+// query ready 
 $(document).ready(function(){
     
     // activate text transition
@@ -30,10 +74,10 @@ $(document).ready(function(){
 
 
     // duplicate handlebar div
-    const template = $('#handlebarReview').html();
-    for(let i = 0; i < 5; i++){
-        $('#slick').append(template);
-    };
+    // const template = $('#handlebarReview').html();
+    // for(let i = 0; i < 5; i++){
+    //     $('#slick').append(template);
+    // };
 
 
     // card slide deck desktop view

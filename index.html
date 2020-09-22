@@ -91,14 +91,14 @@
 		<script id="handlebarReview" type="text/x-handlebars-template">
 			<div>
 				<div class="card mx-2 p-2">
-					<img src="images/sampleImg1.JPG" class="d-block w-100" alt="...">
+					<img src="{{imgUpload}}" class="d-block w-100" alt="...">
 					<div class="sectionTitle">
 						<h2>{{nameOfTea}}</h2>
 					</div>
 					<div id="reviewCard">
 						<p>Type: {{type}}</p>
-						<p>Tasting Notes: {{The simple things in life trying different restaurants vinyl records Game of Thrones. There's no such thing as a typical Friday night grab coffee or a drink ask me anything Netflix but then it wouldn't be private, making people laugh the simple things in life fascinates me short-term dating easy-going.}}</p>
-						<p>Review By: {{nameOfPerson}}</p>
+						<p>Tasting Notes: {{tastingNotes}}</p>
+						<p>Review By: {{nameOfUser}}</p>
 						<a href="???">Purchased @ + {{shop}}</a>
 					</div>
 				</div>
@@ -197,6 +197,11 @@
 <!-- Bootstrap Script Tags -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
 <!-- Main JS Script Tag -->
 <script src="main.js" type="text/javascript"></script>
 
