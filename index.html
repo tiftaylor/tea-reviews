@@ -99,7 +99,7 @@
 						<p>Type: {{type}}</p>
 						<p>Tasting Notes: {{tastingNotes}}</p>
 						<p>Review By: {{nameOfUser}}</p>
-						<a href="???">Purchased @ + {{shop}}</a>
+						<a href="{{shopURL}}" target="_blank">Purchased @ {{shop}}</a>
 					</div>
 				</div>
 			</div>
@@ -138,18 +138,21 @@
 
 				<div class="col-md-6 my-3 mx-md-3" id="reviewForm">
 					<div id="review">
+
 						<div class="form-group row">
 							<label for="userName" class="col-sm-4 col-form-label">Your Name:</label>
 							<div class="col-sm-8">
 							<input type="text" class="form-control" id="userName" name="userName">
 							</div>
 						</div>
+
 						<div class="form-group row">
 							<label for="nameOfTea" class="col-sm-4 col-form-label">Name of Tea:</label>
 							<div class="col-sm-8">
 							<input type="text" class="form-control" id="nameOfTea" name="nameOfTea">
 							</div>
 						</div>
+
 						<div class="form-group row">
 							<label for="typeOfTea" class="col-sm-4 col-form-label">Type of Tea:</label>
 							<div class="col-sm-8">
@@ -163,13 +166,30 @@
 								</select>
 							</div>
 						</div>
+
+						<div class="form-group row">
+							<label for="shopName" class="col-sm-4 col-form-label">Name of Shop:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="shopName" name="shopName">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="shopURL" class="col-sm-4 col-form-label">Shop URL:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="shopURL" name="shopURL">
+							</div>
+						</div>
+
 						<div class="form-group">
 							<label for="reviewText">Your tasting notes of this tea:</label>
 							<textarea class="form-control" id="reviewText" name="reviewText" rows="3" maxlength="300"></textarea>
 						</div>
+
 						<div class="form-group">
-							<input class="btn btn-success" type="button" id="imgUpload" name="imgUpload" value="Submit Review">
+							<input class="btn btn-success" type="button" id="reviewData" name="reviewData" value="Submit Review">
 						</div>
+
 					</div>
 				</div>
 			</div>
