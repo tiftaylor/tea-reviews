@@ -1,6 +1,5 @@
 
 // Firebase Configuration
-
 var firebaseConfig = {
     apiKey: "AIzaSyD2gm78P-MUB-uQujTozkxNIhZAXFOaDtU",
     authDomain: "tea-review-f07f3.firebaseapp.com",
@@ -19,24 +18,37 @@ let database = firebase.database();
 
 const dbRef = database.ref('reviews')
 
-dbRef.push({
-    nameOfTea: 'Yucky',
-    imgUpload: 'images/sampleImg1.JPG',
-    type: 'black',
-    tastingNotes: 'The simple things in life trying different restaurants vinyl records Game of Thrones. Theres no such thing as a typical Friday night grab coffee or a drink ask me anything Netflix but then it wouldnt be private, making people laugh the simple things in life fascinates me short-term dating easy-going.',
-    nameOfUser: 'tif',
-    shop: 'www.nepalieteatraders.com'
-})
+$('#reviewData').on('click', function() {
+    let reviewData = {};
+
+    reviewData.nameOfTea = $('#nameOfTea').val();
+    reviewData.imgUpload = $('#img-preview').attr('src');
+    reviewData.type = $('#typeOfTea').val();
+    reviewData.tastingNotes = $('#reviewText').val();
+    reviewData.nameOfUser = $('#userName').val();
+    reviewData.shop = $('#shopName').val();
+    reviewData.shopURL = $('#shopURL').val();
+    
+    dbRef.push(reviewData);
+
+    // reset the "form"
+    $('input[type=text]').val('');
+    $('textarea').val('');
+    $('select').val('white');
+    $('#img-preview').attr('src', 'images/mug-hot-solid.svg');
+    $('#img-input').val('');
+});
+
 
 
 // render data to review cards
 dbRef.on('child_added', function(snapshot) {
     const slickCarousel = $('#slick');
-    const review = snapshot.val();
+    const reviewData = snapshot.val();
 
     const source = $("#handlebarReview").html();
     const template = Handlebars.compile(source);
-    const renderedHTML = template(review);
+    const renderedHTML = template(reviewData);
     slickCarousel.slick('slickAdd', renderedHTML);
   });
 
@@ -71,13 +83,6 @@ $(document).ready(function(){
     $(document).scroll(function() {
         activateText();
     });
-
-
-    // duplicate handlebar div
-    // const template = $('#handlebarReview').html();
-    // for(let i = 0; i < 5; i++){
-    //     $('#slick').append(template);
-    // };
 
 
     // card slide deck desktop view
