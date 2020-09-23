@@ -22,7 +22,7 @@ $('#reviewData').on('click', function() {
     let reviewData = {};
 
     reviewData.nameOfTea = $('#nameOfTea').val();
-    reviewData.imgUpload = $('#img-preview').attr('src');
+    reviewData.imgUpload = getImgURL();
     reviewData.type = $('#typeOfTea').val();
     reviewData.tastingNotes = $('#reviewText').val();
     reviewData.nameOfUser = $('#userName').val();
@@ -32,6 +32,8 @@ $('#reviewData').on('click', function() {
     dbRef.push(reviewData);
 
     // reset the "form"
+    removeCropper();
+    $('.btn-secondary').text('Select Tea Image');
     $('input[type=text]').val('');
     $('textarea').val('');
     $('select').val('white');
@@ -51,6 +53,21 @@ dbRef.on('child_added', function(snapshot) {
     const renderedHTML = template(reviewData);
     slickCarousel.slick('slickAdd', renderedHTML);
   });
+
+
+function getImgURL () {
+    const cropper = $('#img-preview').data('cropper');
+    if(cropper){
+        return cropper.getCroppedCanvas().toDataURL();
+    } else {
+        return $('#img-preview').attr('src');
+    }
+    
+}
+
+function removeCropper () {
+    $('#img-preview').cropper('destroy').addClass('no-image');
+}
 
 
 // query ready 
@@ -113,7 +130,7 @@ $(document).ready(function(){
 
         reader.onload = (e) => {
             var $image = $('#img-preview');
-
+            $('.btn-secondary').text('Need a different one?')
             $image
                 .attr('src', e.target.result)
                 .removeClass('no-image');
@@ -121,6 +138,7 @@ $(document).ready(function(){
             $image.cropper({
                 aspectRatio: 1 / 1,
                 viewMode: 2,
+                zoomable: false,
                 crop: function(event) {
                     console.log(event.detail.x);
                     console.log(event.detail.y);

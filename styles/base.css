@@ -30,9 +30,15 @@
   animation: transition-in 1000ms forwards;
 }
 
-
-#image {
+/* Relating to Cropperjs  */
+#img-preview {
   max-width: 100%; /* This rule is very important, please do not ignore this! */
+}
+
+#img-wrapper {
+  margin: 30px auto;
+  padding: 0;
+  width: 70%;
 }
 
 
