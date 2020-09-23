@@ -66,7 +66,7 @@ function renderToSlick (snapshot) {
     const source = $("#handlebarReview").html();
     const template = Handlebars.compile(source);
     const renderedHTML = template(reviewData);
-    slickCarousel.slick('slickAdd', renderedHTML);
+    slickCarousel.slick('slickAdd', renderedHTML).removeClass('loading');
 }
 
 
