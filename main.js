@@ -1,6 +1,6 @@
 
 // Firebase Configuration
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyD2gm78P-MUB-uQujTozkxNIhZAXFOaDtU",
     authDomain: "tea-review-f07f3.firebaseapp.com",
     databaseURL: "https://tea-review-f07f3.firebaseio.com",
@@ -14,12 +14,30 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-let database = firebase.database();
+const dbRef = firebase.database().ref('reviews');
 
-const dbRef = database.ref('reviews')
 
-$('#reviewData').on('click', function() {
-    let reviewData = {};
+// Set up Slick Carousel
+function createSlick () {
+    $('#slick').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+}
+
+
+// Review Data
+function publishReviewData () {
+    const reviewData = {};
 
     reviewData.nameOfTea = $('#nameOfTea').val();
     reviewData.imgUpload = getImgURL();
@@ -39,20 +57,39 @@ $('#reviewData').on('click', function() {
     $('select').val('white');
     $('#img-preview').attr('src', 'images/mug-hot-solid.svg');
     $('#img-input').val('');
-});
+}
 
 
-
-// render data to review cards
-dbRef.on('child_added', function(snapshot) {
+function renderToSlick (snapshot) {
     const slickCarousel = $('#slick');
     const reviewData = snapshot.val();
-
     const source = $("#handlebarReview").html();
     const template = Handlebars.compile(source);
     const renderedHTML = template(reviewData);
-    slickCarousel.slick('slickAdd', renderedHTML);
-  });
+    slickCarousel.slick('slickAdd', renderedHTML).removeClass('loading');
+}
+
+
+// Select Img for Crop -- Get Cropped Img URL -- Remove Cropper Img
+function handleImgSelection () {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+        var $image = $('#img-preview');
+        $('.btn-secondary').text('Need a different one?')
+        $image
+            .attr('src', e.target.result)
+            .removeClass('no-image');
+
+        $image.cropper({
+            aspectRatio: 1 / 1,
+            viewMode: 2,
+            zoomable: false,
+        });
+    }
+
+    reader.readAsDataURL(this.files[0]);
+}
 
 
 function getImgURL () {
@@ -65,97 +102,45 @@ function getImgURL () {
     
 }
 
+
 function removeCropper () {
     $('#img-preview').cropper('destroy').addClass('no-image');
 }
 
 
+// activate text transition
+function isTextInView(element, fullView) {
+    const wFromTop = $(window).scrollTop()
+    const wFromBot = wFromTop + $(window).height()
+    const eOffsetTop = $(element).offset().top
+    const eOffsetBot = eOffsetTop + $(element).height();
+
+    if (fullView) {
+        return wFromTop < eOffsetTop && eOffsetBot < wFromBot;
+    } else {
+        return eOffsetTop <= wFromBot && wFromTop <= eOffsetBot;
+    }
+}
+
+function activateText() {
+    $(".text-fade").each(function() {
+        var element = $(this);
+        if (isTextInView(element, false)) {
+            element.addClass("activate");
+        }
+    });
+}
+
+
 // query ready 
 $(document).ready(function(){
-    
-    // activate text transition
-    function isTextInView(element, fullView) {
-        const wFromTop = $(window).scrollTop()
-        const wFromBot = wFromTop + $(window).height()
-        const eOffsetTop = $(element).offset().top
-        const eOffsetBot = eOffsetTop + $(element).height();
-
-        if (fullView) {
-            return wFromTop < eOffsetTop && eOffsetBot < wFromBot;
-        } else {
-            return eOffsetTop <= wFromBot && wFromTop <= eOffsetBot;
-        }
-    }
-
-    const textFade = $(".text-fade");
-    function activateText() {
-        textFade.each(function() {
-            var element = $(this);
-            if (isTextInView(element, false)) {
-                element.addClass("activate");
-            }
-        });
-    }
-
-    $(document).scroll(function() {
-        activateText();
-    });
-
-
-    // card slide deck desktop view
-    $('#slick').slick({
-        infinite: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-
-    // upload img for review
- 
-    
-
-    
-
-
-
-    $('#img-input').on('change', function() {
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            var $image = $('#img-preview');
-            $('.btn-secondary').text('Need a different one?')
-            $image
-                .attr('src', e.target.result)
-                .removeClass('no-image');
-
-            $image.cropper({
-                aspectRatio: 1 / 1,
-                viewMode: 2,
-                zoomable: false,
-                crop: function(event) {
-                    console.log(event.detail.x);
-                    console.log(event.detail.y);
-                    console.log(event.detail.width);
-                    console.log(event.detail.height);
-                    console.log(event.detail.rotate);
-                    console.log(event.detail.scaleX);
-                    console.log(event.detail.scaleY);
-                }
-            });
-        }
-
-        reader.readAsDataURL(this.files[0]);
-    });
-
-
-    // general calls
     activateText();
+    createSlick();
+
+    $(document).on('scroll', activateText);
+    $('#img-input').on('change', handleImgSelection);
+    $('#reviewData').on('click', publishReviewData);
+    dbRef.on('child_added', renderToSlick);
+    
 });
 

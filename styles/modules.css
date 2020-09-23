@@ -3,6 +3,7 @@
   background-image: url("../images/landing2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 #header-text {
@@ -81,29 +82,11 @@
 
 
 /* Tea Review Section */
-#slick {
-  margin: 45px;
+.loading {
+  background-image: url('../images/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
-.slick-prev, .slick-next {
-  filter: invert(1);
-  width: 35px;
-  height: 35px;
-}
-
-.slick-next {
-  right: -35px;
-}
-
-.slick-prev {
-  left: -35px;
-}
-
-.slick-prev:before, .slick-next:before {
-  font-size: 35px;
-}
-
-
 
 /* Upload Review section */
 #uploadImg {
