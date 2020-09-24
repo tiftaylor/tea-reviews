@@ -1,7 +1,7 @@
 # Tea Review App
 Personal Project   
 
-> GitHub Live URL: tiftaylor.github.io/tea-reviews/
+> GitHub Live URL: [tiftaylor.github.io/tea-reviews/](tiftaylor.github.io/tea-reviews/)
 
 **Author**: Tif Taylor | [LinkedIn](https://www.linkedin.com/in/tiftaylor/) | Website Portfolio  
 **Date Created**: September 2020  
