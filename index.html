@@ -143,19 +143,19 @@
 				<!-- <div class="col-md-1 my-3"></div> -->
 
 				<div class="col-md-6 my-3 mx-md-3" id="reviewForm">
-					<div id="review">
+					<form id="review">
 
 						<div class="form-group row">
 							<label for="userName" class="col-sm-4 col-form-label">Your Name:</label>
 							<div class="col-sm-8">
-							<input type="text" class="form-control" id="userName" name="userName">
+							<input type="text" class="form-control" id="userName" name="userName" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label for="nameOfTea" class="col-sm-4 col-form-label">Name of Tea:</label>
 							<div class="col-sm-8">
-							<input type="text" class="form-control" id="nameOfTea" name="nameOfTea">
+							<input type="text" class="form-control" id="nameOfTea" name="nameOfTea" required>
 							</div>
 						</div>
 
@@ -189,15 +189,15 @@
 
 						<div class="form-group">
 							<label for="reviewText">Your tasting notes of this tea:</label>
-							<textarea class="form-control" id="reviewText" name="reviewText" rows="3" maxlength="300" onkeyup="charCount(this)"></textarea>
+							<textarea class="form-control" id="reviewText" name="reviewText" rows="3" maxlength="300" onkeyup="charCount(this)" required></textarea>
 							<div id="displayCharNum"></div>
 						</div>
 
 						<div class="form-group">
-							<input class="btn btn-success" type="button" id="reviewData" name="reviewData" value="Submit Review">
+							<input class="btn btn-success" type="submit" id="reviewData" name="reviewData" value="Submit Review">
 						</div>
 
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
