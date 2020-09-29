@@ -14,7 +14,19 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+
+// Global Variables
 const dbRef = firebase.database().ref('reviews');
+let currentQuery = dbRef;
+const teaTypeMap = {
+    'Ripe Puer': 'Ripe Pu’er',
+    'Raw Puer': 'Raw Pu’er',
+    'White': 'White',
+    'Green': 'Green',
+    'Oolong': 'Oolong',
+    'Black': 'Black'
+};
 
 
 // Set up Slick Carousel
@@ -60,13 +72,30 @@ function publishReviewData () {
 }
 
 
+function filterReviewData () {
+    const slickCarousel = $('#slick');
+    const typeBtnClicked = $(this).data("teatype");
+    currentQuery.off();
+    currentQuery = dbRef.orderByChild('type').equalTo(typeBtnClicked);
+    $('#typeHeading').text(teaTypeMap[typeBtnClicked]);
+    slickCarousel.slick('slickRemove', null, null, true);
+    $('body, html').animate({
+        scrollTop: $('#typeHeading').offset().top
+    }, 800);
+    slickCarousel.addClass('loading');
+    currentQuery.on('child_added', renderToSlick);
+}
+
+
 function renderToSlick (snapshot) {
     const slickCarousel = $('#slick');
     const reviewData = snapshot.val();
+    reviewData.type = teaTypeMap[reviewData.type];
     const source = $("#handlebarReview").html();
     const template = Handlebars.compile(source);
     const renderedHTML = template(reviewData);
-    slickCarousel.slick('slickAdd', renderedHTML).removeClass('loading');
+    slickCarousel.slick('slickAdd', renderedHTML);
+    slickCarousel.removeClass('loading');
 }
 
 
@@ -132,6 +161,12 @@ function activateText() {
 }
 
 
+// textarea character count
+function charCount(val) {
+    let length = val.value.length;
+    $('#displayCharNum').text(300 - length);
+}
+
 // query ready 
 $(document).ready(function(){
     activateText();
@@ -140,7 +175,11 @@ $(document).ready(function(){
     $(document).on('scroll', activateText);
     $('#img-input').on('change', handleImgSelection);
     $('#reviewData').on('click', publishReviewData);
-    dbRef.on('child_added', renderToSlick);
+    // all data
+    currentQuery.on('child_added', renderToSlick);
+    // filtered data
+    $('.tea-button').on('click', filterReviewData);
     
 });
+
 
