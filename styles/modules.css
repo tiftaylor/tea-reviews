@@ -107,6 +107,8 @@
   opacity: 0.2;
 }
 
-
+#displayCharNum {
+  float: right;
+}
 
 /* Footer Section */
