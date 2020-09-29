@@ -27,6 +27,7 @@ const teaTypeMap = {
     'Oolong': 'Oolong',
     'Black': 'Black'
 };
+const urlCheck = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*)/;
 
 
 // Set up Slick Carousel
@@ -48,7 +49,8 @@ function createSlick () {
 
 
 // Review Data
-function publishReviewData () {
+function publishReviewData (e) {
+    e.preventDefault();
     const reviewData = {};
 
     reviewData.nameOfTea = $('#nameOfTea').val();
@@ -66,7 +68,7 @@ function publishReviewData () {
     $('.btn-secondary').text('Select Tea Image');
     $('input[type=text]').val('');
     $('textarea').val('');
-    $('select').val('white');
+    $('select').val('White');
     $('#img-preview').attr('src', 'images/mug-hot-solid.svg');
     $('#img-input').val('');
 }
@@ -90,7 +92,12 @@ function filterReviewData () {
 function renderToSlick (snapshot) {
     const slickCarousel = $('#slick');
     const reviewData = snapshot.val();
+
     reviewData.type = teaTypeMap[reviewData.type];
+    if(!reviewData.shopURL.startsWith('http')) {
+        reviewData.shopURL = '//' + reviewData.shopURL;
+    }
+    
     const source = $("#handlebarReview").html();
     const template = Handlebars.compile(source);
     const renderedHTML = template(reviewData);
@@ -167,6 +174,26 @@ function charCount(val) {
     $('#displayCharNum').text(300 - length);
 }
 
+
+function checkURL(e) {
+    let value = e.target.value;
+    let valid = false;
+
+    if (value.startsWith('java')) {
+        valid = false;
+    } else if (value.match(urlCheck)) {
+        valid = true;
+    }
+
+    if (!valid) {
+        e.target.setCustomValidity('Please use www.website.com format');
+    } else {
+        e.target.setCustomValidity('');
+    }
+    $('#review')[0].reportValidity();
+}
+
+
 // query ready 
 $(document).ready(function(){
     activateText();
@@ -174,7 +201,8 @@ $(document).ready(function(){
 
     $(document).on('scroll', activateText);
     $('#img-input').on('change', handleImgSelection);
-    $('#reviewData').on('click', publishReviewData);
+    $('#shopURL').on('change', checkURL);
+    $('#review').on('submit', publishReviewData);
     // all data
     currentQuery.on('child_added', renderToSlick);
     // filtered data
