@@ -1,3 +1,10 @@
+:root {
+  --header-color: #6c756e;
+}
+
+h1, h2 {
+  color: var(--header-color);
+}
 
 /* Text Transition */
 @keyframes transition-in {
