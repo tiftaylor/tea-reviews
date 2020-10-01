@@ -63,6 +63,11 @@ function publishReviewData (e) {
     
     dbRef.push(reviewData);
 
+    // scroll to carousel
+    $('body, html').animate({
+        scrollTop: $('#typeHeading').offset().top
+    }, 800);
+
     // reset the "form"
     removeCropper();
     $('.btn-secondary').text('Select Tea Image');
@@ -101,7 +106,7 @@ function renderToSlick (snapshot) {
     const source = $("#handlebarReview").html();
     const template = Handlebars.compile(source);
     const renderedHTML = template(reviewData);
-    slickCarousel.slick('slickAdd', renderedHTML);
+    slickCarousel.slick('slickAdd', renderedHTML, undefined, true);
     slickCarousel.removeClass('loading');
 }
 
