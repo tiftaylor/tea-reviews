@@ -1,7 +1,7 @@
 /* General Layout */
 
 section {
-  margin: 45px;
+  padding: 45px;
 }
 
     @media only screen and (max-width: 576px) {
@@ -15,6 +15,9 @@ section {
   padding: 0;
 }
 
+footer ul {
+  margin-bottom: 0;
+}
 
 
 /* Header Section */
@@ -43,7 +46,7 @@ header {
 }
 
 #header-text p {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
     @media only screen and (max-width: 1200px) {
@@ -67,10 +70,12 @@ header {
 
 #teaReviewSection {
   margin: 0;
+  padding: 0;
 }
 
 #slick {
-  margin: 45px;
+  margin: calc(45px - 1rem);
+  margin-top: 7rem;
   height: 766px;
 }
 
@@ -90,6 +95,14 @@ header {
 
 .slick-prev:before, .slick-next:before {
   font-size: 35px;
+}
+
+.slick-prev:before {
+  content: '<';
+}
+
+.slick-next:before {
+  content: '>';
 }
 
 

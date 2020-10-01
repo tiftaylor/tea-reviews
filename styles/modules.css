@@ -34,6 +34,7 @@
 
 
 /* Select Tea Type Section */
+
 .tea-button {
   color: white;
   font-size: 2.3rem;
@@ -91,6 +92,7 @@
 
 
 /* Tea Review Section */
+
 .loading {
   background-image: url('../images/loading.gif');
   background-repeat: no-repeat;

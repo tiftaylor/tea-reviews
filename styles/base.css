@@ -6,6 +6,11 @@ h1, h2 {
   color: var(--header-color);
 }
 
+.greenbkgrnd {
+  background-color: #e3ece3;
+}
+
+
 /* Text Transition */
 @keyframes transition-in {
   from {
