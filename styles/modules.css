@@ -91,6 +91,7 @@
     }
 
 
+
 /* Tea Review Section */
 
 .loading {
@@ -98,6 +99,7 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 
 /* Upload Review section */
 #uploadImg {
@@ -122,4 +124,13 @@
   float: right;
 }
 
+
 /* Footer Section */
+.social {
+  width: 25%;
+  opacity: 0.5;
+}
+
+#footer-div {
+  margin: 0;
+}
