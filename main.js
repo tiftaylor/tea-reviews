@@ -84,10 +84,13 @@ function filterReviewData () {
     const typeBtnClicked = $(this).data("teatype");
     currentQuery.off();
     currentQuery = dbRef.orderByChild('type').equalTo(typeBtnClicked);
-    $('#typeHeading').text(teaTypeMap[typeBtnClicked]);
+
+    $('.tea-button').removeClass('active');
+    $(this).addClass('active');
+
     slickCarousel.slick('slickRemove', null, null, true);
     $('body, html').animate({
-        scrollTop: $('#typeHeading').offset().top
+        scrollTop: $('#teaReviewSection').offset().top
     }, 800);
     slickCarousel.addClass('loading');
     currentQuery.on('child_added', renderToSlick);
