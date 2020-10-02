@@ -56,35 +56,51 @@
   font-size: 2.3rem;
   margin: 1rem 0;
   padding: 1.7rem 0;
-}
-
-.tea-button:hover {
-  opacity: 0.4;
+  transition: background 0.25s;
+  cursor: pointer;
 }
 
 #white {
-  background: #f1d451;
+  background: #818a83;
 }
+  #white:hover, #white.active {
+    background: #f1d451;
+  }
 
 #green {
-  background: #7ec251;
+  background: #818a83;
 }
+  #green:hover, #green.active {
+    background: #7ec251;
+  }
 
 #oolong {
-  background: #cec254;
+  background: #818a83;
 }
+  #oolong:hover, #oolong.active {
+    background: #cec254;
+  }
 
 #black {
-  background: #aa4016;
+  background: #818a83;
 }
+  #black:hover, #black.active  {
+    background: #aa4016;
+  }
 
 #raw {
-  background: #d4e767;
+  background: #818a83;
 }
+  #raw:hover, #raw.active  {
+    background: #d4e767;
+  }
 
 #ripe {
-  background: #441c09;
+  background: #818a83;
 }
+  #ripe:hover, #ripe.active  {
+    background: #441c09;
+  }
 
     @media only screen and (max-width: 992px) {
       .tea-button {
@@ -127,7 +143,7 @@
 }
 
 #img-preview {
-  /* width: 150px; */
+  max-height: 400px;
   display: block;
   margin: 2.5rem auto;
 }
