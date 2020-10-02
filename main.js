@@ -65,7 +65,7 @@ function publishReviewData (e) {
 
     // scroll to carousel
     $('body, html').animate({
-        scrollTop: $('#typeHeading').offset().top
+        scrollTop: $('#teaReviewSection').offset().top
     }, 800);
 
     // reset the "form"
@@ -99,7 +99,7 @@ function renderToSlick (snapshot) {
     const reviewData = snapshot.val();
 
     reviewData.type = teaTypeMap[reviewData.type];
-    if(!reviewData.shopURL.startsWith('http')) {
+    if(reviewData.shopURL && !reviewData.shopURL.startsWith('http')) {
         reviewData.shopURL = '//' + reviewData.shopURL;
     }
     

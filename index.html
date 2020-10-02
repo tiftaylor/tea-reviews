@@ -30,10 +30,10 @@
 	<!-- Section1: Top of page shows full window onload -->
 	<div id="topOfPage">
 			<div id="topImg"></div>
-			<div id="header-text">
-				<h1>The Taste of <em>Camellia Senensis</em></h1>
-				<p>Welcome to the one stop shop where tea lovers around the world can share their tasting notes on teas their drinking. You can add your own tasting notes at the bottom of the page, including a link to where you purchased your tea to help other tea lovers find great tea!</p>
-			</div>
+	</div>
+	<div id="header-text">
+		<h1>The Taste of <em>Camellia Senensis</em></h1>
+		<p>Welcome to the one stop shop where tea lovers around the world can share their tasting notes on teas they're drinking. Help other tea lovers find great tea!</p>
 	</div>
 </header>
 
@@ -98,7 +98,13 @@
 						<p>Type: {{type}}</p>
 						<p>Tasting Notes: {{tastingNotes}}</p>
 						<p>Review By: {{nameOfUser}}</p>
-						<a href="{{shopURL}}" target="_blank">Purchased @ {{shop}}</a>
+						{{#if shop}}
+							{{#if shopURL}}
+							<a href="{{shopURL}}" target="_blank">Purchased @ {{shop}}</a>
+							{{else}}
+							<p>Purchased at: {{shop}}</p>
+							{{/if}}
+						{{/if}}
 					</div>
 				</div>
 			</div>
