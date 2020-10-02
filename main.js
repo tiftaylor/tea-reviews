@@ -122,11 +122,16 @@ function handleImgSelection () {
             .attr('src', e.target.result)
             .removeClass('no-image');
 
-        $image.cropper({
-            aspectRatio: 1 / 1,
-            viewMode: 2,
-            zoomable: false,
-        });
+        const cropper = $image.data('cropper');
+        if (cropper) {
+            cropper.replace(e.target.result);
+        } else {
+            $image.cropper({
+                aspectRatio: 1 / 1,
+                viewMode: 2,
+                zoomable: false,
+            });
+        }
     }
 
     reader.readAsDataURL(this.files[0]);

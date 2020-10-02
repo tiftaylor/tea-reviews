@@ -127,12 +127,13 @@
 }
 
 #img-preview {
-  width: 150px;
+  /* width: 150px; */
   display: block;
   margin: 2.5rem auto;
 }
 
 .no-image {
+  width: 150px;
   opacity: 0.2;
 }
 
