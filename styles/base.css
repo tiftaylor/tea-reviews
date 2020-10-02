@@ -6,6 +6,10 @@ h1, h2 {
   color: var(--header-color);
 }
 
+p, label {
+  color: #5f6360;
+}
+
 .greenbkgrnd {
   background-color: #e3ece3;
 }
