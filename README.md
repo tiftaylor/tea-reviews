@@ -1,10 +1,11 @@
 # Tea Review App
 Personal Project   
 
-> GitHub Live URL: [tiftaylor.github.io/tea-reviews/](tiftaylor.github.io/tea-reviews/)
+> Live URL: [www.reviewyourtea.com](www.reviewyourtea.com)
+
 
 **Author**: Tif Taylor | [LinkedIn](https://www.linkedin.com/in/tiftaylor/) | Website Portfolio  
-**Date Created**: September 2020  
+**Date Created**: October 2020  
 **Type**: Full Stack Single Page Application
 
 
@@ -18,5 +19,5 @@ Personal Project
 
 
 # Resource Acknowledgement
-- Placeholder Upload Image | Font Awesome [Tea Mug](https://fontawesome.com/icons/mug-hot?style=solid)
+- Placeholder Upload Image & Social Icons | [Font Awesome](https://fontawesome.com)
 - Loading Gif while Slick loads | Artist: [Mauro Gatti](https://dribbble.com/shots/3775213-Herbal-Tea-says-RELAX#shot-description), "Tea says Relax"
