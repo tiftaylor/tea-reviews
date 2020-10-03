@@ -21,12 +21,23 @@
 
 
 #header-text h1 {
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 400;
   /* line-height: 1.2; */
 }
 
+    @media only screen and (min-width: 576px) {
+      #header-text h1 {
+        font-size: 4.5rem;
+      }
+    }
+
     @media only screen and (min-width: 992px) {
+      #header-text h1 {
+        font-size: 5.5rem;
+      }
+    }    
+    @media only screen and (min-width: 1200px) {
       #header-text h1 {
         font-size: 7rem;
       }
@@ -44,6 +55,12 @@
     @media only screen and (max-width: 992px) {
       #header-text p {
         font-size: 1.5rem;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      #header-text p {
+        font-size: 1.2rem;
       }
     }
 
@@ -132,6 +149,9 @@
   background-position: center;
 }
 
+.slick-slide:focus {
+  outline: none;
+}
 
 /* Upload Review section */
 #uploadImg {
@@ -163,6 +183,12 @@
   width: 25%;
   opacity: 0.5;
 }
+    @media only screen and (max-width: 576px) {
+      .social {
+        width: 50%;
+        opacity: 0.5;
+      }
+    }
 
 #footer-div {
   margin: 0;

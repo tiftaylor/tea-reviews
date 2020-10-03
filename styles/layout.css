@@ -1,14 +1,5 @@
 /* General Layout */
 
-section {
-  padding: 45px;
-}
-
-    @media only screen and (max-width: 576px) {
-      section {
-        margin: 15px;
-      }
-    }
 
 /* Overrides of Bootstrap Classes */
 #selectTeaType .container-fluid {
@@ -48,21 +39,40 @@ footer ul {
   margin: auto;
   margin-top: 40px;
 }
+
     @media only screen and (max-width: 1200px) {
+      #topOfPage {
+        min-height: 660px;
+      }
+
       #header-text p {
         width: 80%;
       }
     }
 
     @media only screen and (max-width: 992px) {
-      #header-text p {
-        width: 80%;
+      #topOfPage {
+        min-height: 560px;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      #topOfPage {
+        min-height: 460px;
       }
     }
 
 
 /* Select Tea Type Section */
+#selectTeaType {
+  padding: 2rem;
+}
 
+  @media only screen and (min-width: 576px) {
+    #selectTeaType {
+      padding: 45px;
+    }
+  }
 
 
 /* Tea Review Section */
@@ -70,11 +80,11 @@ footer ul {
 #teaReviewSection {
   margin: 0;
   padding: 0;
+  padding-top: 1rem;
 }
 
 #slick {
   margin: calc(45px - 1rem);
-  margin-top: 7rem;
   height: 766px;
 }
 
@@ -82,6 +92,7 @@ footer ul {
   filter: invert(1);
   width: 35px;
   height: 35px;
+  z-index: 100;
 }
 
 .slick-next {
