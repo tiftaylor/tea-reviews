@@ -83,15 +83,20 @@ function filterReviewData () {
     const slickCarousel = $('#slick');
     const typeBtnClicked = $(this).data("teatype");
     currentQuery.off();
-    currentQuery = dbRef.orderByChild('type').equalTo(typeBtnClicked);
 
-    $('.tea-button').removeClass('active');
-    $(this).addClass('active');
+    if($(this).hasClass('active')){
+        currentQuery = dbRef;
+        $('.tea-button').removeClass('active');
+    } else {
+        currentQuery = dbRef.orderByChild('type').equalTo(typeBtnClicked);
+        $('.tea-button').removeClass('active');
+        $(this).addClass('active');
+        $('body, html').animate({
+            scrollTop: $('#teaReviewSection').offset().top
+        }, 800);
+    }
 
     slickCarousel.slick('slickRemove', null, null, true);
-    $('body, html').animate({
-        scrollTop: $('#teaReviewSection').offset().top
-    }, 800);
     slickCarousel.addClass('loading');
     currentQuery.on('child_added', renderToSlick);
 }

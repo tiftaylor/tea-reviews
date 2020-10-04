@@ -1,10 +1,11 @@
 # Tea Review App
-Personal Project   
+Personal Full-stack Project   
 
 > Live URL: [www.reviewyourtea.com](www.reviewyourtea.com)
 
+# About
 
-**Author**: Tif Taylor | [LinkedIn](https://www.linkedin.com/in/tiftaylor/) | Website Portfolio  
+**Author**: Tif Taylor | [LinkedIn](https://www.linkedin.com/in/tiftaylor/) | [P]ortfolio Website](www.tiftaylor.com)  
 **Date Created**: October 2020  
 **Type**: Full Stack Single Page Application
 
